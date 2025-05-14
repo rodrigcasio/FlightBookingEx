@@ -1,4 +1,4 @@
-# FlightBooking System: C++ Project
+# Flight Booking System: C++ Project
 
 A small C++ project demonstrating **variable scopes** and **storage classes** through a flight booking system. The system manages flight bookings, tracks statistics, and maintains a booking history, showcasing the use of `static`, `mutable`, and `auto` in a practical application.
 
@@ -8,7 +8,7 @@ A small C++ project demonstrating **variable scopes** and **storage classes** th
 - **Booking History**: Store and display booking details in a `static` vector for all flights.
 - **Statistics**: Track active bookings, cancellations, total revenue, and average ticket price with formatted output.
 - **Flexible Pricing**: Support custom ticket prices (e.g., $180.45, $270.99) with a default value ($366.89).
-- **Robust Logic**: Prevent negative and handle edge cases (e.g double cancellation via BookingID check).
+- **Robust Logic**: Prevent negative revenue and handle edge cases (e.g double-cancellation via `bookingID` check)
 
 ## Variable Scopes and Storage Classes
 #### Variable Scopes:
@@ -23,7 +23,7 @@ A small C++ project demonstrating **variable scopes** and **storage classes** th
 -  `mutable`: `bookingID` allows modification in `const` methods like `cancelFlight()`.
 -  Automatic: Local variables in methods like `flightInfo` in demonstrateAuto().
 
-#### Aditional Techniques:
+#### Additional Techniques:
 -  Use of `<iomanip>` for formatted output (e.g $240.83 for average ticket price) and `const` correctness for read-only methods.
 
 ## Purpose
