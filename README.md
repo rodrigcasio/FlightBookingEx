@@ -1,6 +1,6 @@
-# Flight Booking System: C++ Project
+# Flight Booking System (C++)
 
-A small C++ project demonstrating **variable scopes** and **storage classes** through a flight booking system. The system manages flight bookings, tracks statistics, and maintains a booking history, showcasing the use of `static`, `mutable`, and `auto` in a practical application.
+This is a small C++ project I made to practice using variable scopes, storage classes, and basic C++ programming. The program simulates a simple flight booking system where you can book and cancel flights, see booking history, and view some statistics.
 
 ## Features
 
@@ -10,30 +10,31 @@ A small C++ project demonstrating **variable scopes** and **storage classes** th
 - **Flexible Pricing**: Support custom ticket prices (e.g., $180.45, $270.99) with a default value ($366.89).
 - **Robust Logic**: Prevent negative revenue and handle edge cases (e.g double-cancellation via `bookingID` check)
 
-## Variable Scopes and Storage Classes
-#### Variable Scopes:
+## Storage Classes and Variable Scopes
 
--  `auto`: Used in `demonstrateAuto()` for string concatenation and `cancelFlight()` for vector iterators.
--  Class scope: Private members like `ticketPrice` and `passengerName`.
--  `static` scope: Shared `bookings`, `totalRevenue`, and `totalBookings` across all instances.
+- **static**: Used for things that should be shared by all bookings, like the total number of bookings, cancellations, and total revenue. This means every booking can update these numbers.
+- **mutable**: Lets us change some values (like `bookingID`) even in functions that are supposed to be "read-only" (const methods).
+- **auto**: Makes the code a bit easier to write by letting C++ figure out the type for us, especially when working with things like iterators or strings.
+- **Local variables**: Regular variables that only exist inside a function, like when we calculate the average ticket price.
 
-#### Storage Classes:
-
--  `static`: `bookings`, `totalBookings`, `totalCancellations`, `totalRevenue` for class-wide data.
--  `mutable`: `bookingID` allows modification in `const` methods like `cancelFlight()`.
--  Automatic: Local variables in methods like `flightInfo` in demonstrateAuto().
-
-#### Additional Techniques:
--  Use of `<iomanip>` for formatted output (e.g $240.83 for average ticket price) and `const` correctness for read-only methods.
+These helped me learn how to organize data and logic in a way that makes sense for a small project.
 
 ## Purpose
-Developed as part of my C++ learning journey to demonstrate the use of variable scopes and storage classes. This project showcases my ability to design a simple system using `static` members, `mutable` variables, and `auto` type deduction, building on projects like `SchoolSystem`, `BankSystem`.
+
+I made this project to get better at using things like `static` variables, `mutable` variables, and `auto` in C++. It helped me understand how to organize code for a small system and how to use different storage classes and variable scopes.
 
 ## How to Run
-```bash
-g++ src/mainFlightBookingReviewEx.cpp src/fns_FlightBookingReviewEx.cpp -I include -o flight
-./flight
-```
+
+1. Make sure you have a C++ compiler (like g++) installed.
+2. Compile the code:
+   ```
+   g++ src/mainFlightBookingReviewEx.cpp src/fns_FlightBookingReviewEx.cpp -I include -o flight
+   ```
+3. Run the program:
+   ```
+   ./flight
+   ```
+
 ## Sample Output
 
 ### Booking Flights
@@ -83,6 +84,7 @@ Total revenue: $1444.99
 Average ticket price: $240.83
 ```
 
-
 ## Author
-Rodrigo Casio ([View my Github profile](https://github.com/rodrigcasio))
+
+Rodrigo Casio  
+[My GitHub Profile](https://github.com/rodrigcasio)
